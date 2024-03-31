@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebAR Example with Model Viewer</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@latest"></script>
+    <style>
+        model-viewer {
+            width: 100%;
+            height: 100vh; /* Make the viewer full height */
+            --model-viewer-auto-rotate-delay: 3s; /* Delays auto-rotation */
+            --model-viewer-camera-orbit: 90deg 90deg 1.5m; /* Adjust the initial camera angle */
+            --model-viewer-max-camera-orbit: auto auto 10m; /* Max camera orbit for user interaction */
+            --model-viewer-field-of-view: 45deg; /* Field of view */
+        }
+    </style>
+</head>
+<body>
+    <model-viewer 
+        src="https://petersoon92.github.io/WebAR/Petynka_AR_Export.glb"
+        ar 
+        ar-modes="webxr scene-viewer quick-look"
+        environment-image="https://petersoon92.github.io/WebAR/industrial_sunset_puresky_4k.hdr"
+        shadow-intensity="1"
+        shadow-softness="0.0"
+        camera-controls
+        auto-rotate
+        background-color="#ffffff"> <!-- Set this to your desired background color -->
+        <button slot="ar-button" id="ar-button">
+            <img src="ARlogo.png" class="Arlogo"/>
+                <span class="tab"></span>View in AR!
+        </button>
+    </model-viewer>
+    
+
+</body>
+</html>
